@@ -1,6 +1,4 @@
-# --------------------------------------------------------------
-# ecoguard_ai_2.py   (SKY CARGO SOLUTIONS – PROTOCOL CREW + REAL WEATHER API)
-# --------------------------------------------------------------
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -51,9 +49,9 @@ with tab1:
             key="csv_uploader"
         )
 
-# --------------------------------------------------------------
+
 # DATA LOADER (unchanged)
-# --------------------------------------------------------------
+
 @st.cache_data
 def load_data(src, days=None, csv_file=None, waste_red=30, emiss_red=25, cargo_list=None):
     if src == "Upload CSV" and csv_file is not None:
@@ -102,9 +100,9 @@ if img_file:
     if cv_score < 90:
         st.warning("Document flagged – manual review needed")
 
-# --------------------------------------------------------------
+
 # TAB 2 – Visualizations (unchanged)
-# --------------------------------------------------------------
+
 with tab2:
     st.header("Real-time Visualizations")
     c1, c2 = st.columns(2)
@@ -127,9 +125,9 @@ with tab2:
                                       title="Compliance Heatmap", color_continuous_scale="RdYlGn")
         st.plotly_chart(fig_heat, use_container_width=True)
 
-# --------------------------------------------------------------
+
 # TAB 3 – Analytics & Export (unchanged)
-# --------------------------------------------------------------
+
 with tab3:
     st.header("Predictive Analytics & Export")
 
@@ -181,9 +179,9 @@ with tab3:
         mime="text/csv"
     )
 
-# --------------------------------------------------------------
+
 # TAB 4 – Route Optimization + WORLD MAP + REAL WEATHER
-# --------------------------------------------------------------
+
 with tab4:
     st.header("Optimized Flight Route with World Map & Real Weather")
     st.markdown("Real-time route optimization with *great-circle paths, **altitude markers, and **live METAR weather* from NOAA Aviation API.")
